@@ -1,0 +1,325 @@
+body , html{
+    overflow-x: hidden;
+}
+
+
+.product-carousel {
+    text-align: center;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+
+  }
+
+  .product-carousel h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .carousel-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  .product {
+    flex: 1 0 33.33%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    background: transparent;
+  }
+
+  .product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .product h2 {
+    font-size: 1.5em;
+    margin: 10px 0;
+  }
+
+  .product p {
+    font-size: 1em;
+    color: #555;
+  }
+
+  .shop-now {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #e91e63;
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+
+  .shop-now:hover {
+    background-color: #c2185b;
+  }
+
+  /* Arrows */
+  .prev, .next {
+    position: absolute;
+    top: 50%;
+    z-index: 100;
+    background-color:rgb(50, 131, 236);
+    color: white;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    transform: translateY(0%);
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .product {
+      flex: 1 0 50%;
+    }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        background-color:rgb(50, 131, 236);
+        color: white;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        transform: translateY(70px);
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+      .product p {
+       text-align: center;
+      }
+  }
+
+  @media (max-width: 768px) {
+    .product {
+      flex: 1 0 100%;
+    }
+    .prev, .next {
+        position: absolute;
+        top: 50%;
+        z-index: 100;
+        background-color:rgb(50, 131, 236);
+        color: white;
+        border: none;
+        font-size: 1.5em;
+        cursor: pointer;
+        transform: translateY(70px);
+        width: 40px;
+        height: 40px;
+        border-radius: 100%;
+      }
+      .product p {
+        text-align: center;
+       }
+  }
+
+
+  .faq-container {
+    max-width: 89%;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .faq-title {
+    font-size: 2em;
+    text-align: left;
+    margin-bottom: 20px;
+    color:#e91e63;
+  }
+  
+  .faq-item {
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  
+  .faq-question {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .faq-answer {
+    display: none;
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .faq-title {
+      font-size: 1.5em;
+    }
+  
+    .faq-question {
+      font-size: 1em;
+    }
+  
+    .faq-answer {
+      font-size: 0.9em;
+    }
+  }
+  
+
+  .form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #eeeeee;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    position: relative;
+    top: 55px;
+  }
+  
+  .form-content {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .radio-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .radio-buttons label {
+    font-size: 1em;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .radio {
+    margin-right: 5px;
+  }
+  
+  #sayHi:checked + label {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .form-field {
+    margin-bottom: 15px;
+  }
+  
+  .form-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .form-field input,
+  .form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .form-check {
+    margin: 15px 0;
+  }
+  
+  .submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 60%;
+  }
+  
+  .submit-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .form-image {
+    flex: 0.8;
+    margin-top: 2em;
+    text-align: right;
+  }
+  
+  .form-image img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-content {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  
+    .form-image {
+      text-align: center;
+    }
+  }
+
+  .bg {
+    background-color: #e91e63;
+    border-top-left-radius: 10vw; /* Scales with viewport width */
+    border-top-right-radius: 10vw; /* Scales with viewport width */
+    height: 15vh; /* Scales with viewport height */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bg p {
+    text-align: center;
+    color: aliceblue;
+    font-size: 1.2em; /* Adjusts with screen size */
+    margin: 0; /* Removes default paragraph margin */
+    word-spacing: 0.9px; /* Adjusts spacing for readability */
+  }
+  
