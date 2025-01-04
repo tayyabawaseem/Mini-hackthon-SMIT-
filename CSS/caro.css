@@ -269,10 +269,18 @@ body , html{
     cursor: pointer;
     font-size: 1em;
     width: 60%;
+    
   }
   
   .submit-btn:hover {
     background-color: #0056b3;
+  }
+
+  @media (max-width: 400px) {
+    .submit-btn
+    {
+      width: 100%;
+    }
   }
   
   .form-image {
@@ -323,3 +331,508 @@ body , html{
     word-spacing: 0.9px; /* Adjusts spacing for readability */
   }
   
+
+
+  /* General Reset */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Modal Styles */
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  overflow: auto;
+  transition: all 0.3s ease;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.close {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.modal-footer p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.modal-buttons button {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px 30px;
+  margin: 5px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+.modal-buttons button:hover {
+  background-color: #45a049;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 16px;
+  color: #555;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 5px;
+  border-radius: 5px;
+}
+
+.quantity-control button:hover {
+  background-color: #ddd;
+}
+
+.quantity {
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+  }
+
+  .modal-footer p {
+    font-size: 16px;
+  }
+
+  .modal-buttons button {
+    font-size: 16px;
+    padding: 12px 25px;
+  }
+}
+
+
+/* Style for the modal content */
+.cart-item-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;  /* Create 3 columns */
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-name, .product-price {
+  font-size: 16px;
+}
+
+.product-name {
+  font-weight: bold;
+}
+
+.product-price {
+  color: #333;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.quantity {
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 600px) {
+  .cart-item-row {
+    grid-template-columns: 1fr 1fr;  /* Stack columns on small screens */
+  }
+  
+  .action {
+    justify-content: center;
+  }
+}
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #f4f4f4;
+}
+
+.cart-table td {
+  font-size: 14px;
+}
+
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Modal Buttons Container */
+.buttons {
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.buy-now-btn,
+.close-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  width: 100%;
+  margin-bottom: 10px; /* Space between buttons */
+}
+
+/* Green Buy Now Button */
+.buy-now-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Red Close Button */
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* On smaller screens, adjust the button padding and size */
+  .buy-now-btn,
+  .close-btn {
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* On even smaller screens (e.g., mobile), adjust spacing and text size */
+  .buy-now-btn,
+  .close-btn {
+    padding: 20px 10px;
+    font-size: 14px;
+  }
+
+  .buttons {
+    flex-direction: column; /* Keep buttons stacked vertically */
+  }
+}
+
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px; /* Maximum width for large screens */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Cart Table */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cart-table th,
+.cart-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+  background-color: #f4f4f4;
+}
+
+.cart-table td {
+  font-size: 14px;
+}
+
+/* Total Section */
+.total {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Buttons container */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Button styles */
+.buy-now-btn,
+.close-btn {
+  padding: 15px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+  width: 100%;
+  margin-bottom: 10px; /* Space between buttons */
+}
+
+.buy-now-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.close-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  /* Modal content adjustment for tablets and smaller screens */
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  /* Buttons adjustment */
+  .buy-now-btn,
+  .close-btn {
+    padding: 12px 15px;
+    font-size: 14px;
+  }
+
+  /* Table cell font size adjustment */
+  .cart-table td,
+  .cart-table th {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Modal content adjustment for mobile screens */
+  .modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  /* Buttons and Table adjustments */
+  .buy-now-btn,
+  .close-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  .cart-table td,
+  .cart-table th {
+    font-size: 10px;
+  }
+
+  /* Close button larger clickable area */
+  .close {
+    font-size: 32px;
+  }
+}
+.increment
+{
+  background-color: #45a049;
+}
+.delete
+{
+ background-color: red;
+}
+
+@media (max-width: 480px) {
+  .delete
+  {
+    margin-top: 8px;
+   background-color: red;
+  }
+  
+
+}

@@ -43,7 +43,7 @@
     </ul>
     <a href="javascript:void(0)" class="cart" onclick="openCart()">
       <div class="cart-icon-container">
-        <i class="fas fa-shopping-bag"></i>
+        <i class="fas fa-shopping-bag" ></i>
         <span class="cart-count">0</span>
       </div>
     </a>
@@ -379,6 +379,35 @@
 
   <!-- Carousel End -->
 
+  <!-- cart -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeCart()">&times;</span>
+      <h2>Your Cart</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="cartItems" style="text-align: center;">
+        </tbody>
+      </table>
+      <div class="total">
+        <p>Total: $<span id="totalAmount">0.00</span></p>
+      </div>
+      <div class="buttons">
+        <button onclick="buyNow()" class="buy-now-btn">Buy Now</button>
+        <button onclick="closeCart()" class="close-btn">Close</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- cart -->
+
   <!-- Content Start-->
   <div class="text">
     <h1 class="main-title highlight2 title" style="font-size: 2em; padding-left: 2.5em;">
@@ -476,49 +505,48 @@
 
   <div class="form-container">
     <div class="form-content">
-      <div class="radio-buttons">
-        <label>
-          <input type="radio" name="action" class="radio" id="sayHi">
-          Say Hi
-        </label>
-        <label>
-          <input type="radio" name="action" class="radio">
-          Get a Quote
-        </label>
-      </div>
-      <form>
-        <div class="form-field">
-          <label for="name">Name:</label>
-          <input type="text" id="username" placeholder="Enter your name">
+        <div class="radio-buttons">
+            <label>
+                <input type="radio" name="action" class="radio" id="sayHi" value="sayHi">
+                Say Hi
+            </label>
+            <label>
+                <input type="radio" name="action" class="radio" value="getQuote">
+                Get a Quote
+            </label>
         </div>
-        <div class="form-field">
-          <label for="email">Email:</label>
-          <input type="email" id="email" placeholder="Enter your email">
-        </div>
-        <div class="form-field">
-          <label for="message">Message:</label>
-          <textarea id="message" placeholder="Enter your message"></textarea>
-        </div>
-        <div class="form-check">
-          <label>
-            Processing of personal data <br>
-            <input type="checkbox" para>
-            I consent to the processing of personal data after reading the Privacy Policy
-          </label>
-        </div>
-        <input type="submit" class="submit-btn" value="Send Message" id="submit">
-      </form>
+        <form id="contactForm">
+            <div class="form-field">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-field">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-field">
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Enter your message" required></textarea>
+            </div>
+            <div class="form-check">
+                <label>
+                    <input type="checkbox" required>
+                    I consent to the processing of personal data after reading the Privacy Policy
+                </label>
+            </div>
+            <input type="submit" class="submit-btn" value="Send Message" id="submit" type="submit">
+        </form>
     </div>
     <div class="form-image">
-      <img src="Assets/Logo-remove-bg-io.png" alt="Form Illustration" style="margin-right: 100px;">
-      <img src="Assets/Banner.png" alt="Form Illustration">
+        <img src="Assets/Logo-remove-bg-io.png" alt="Form Illustration" style="margin-right: 100px;">
+        <img src="Assets/Banner.png" alt="Form Illustration">
     </div>
-  </div>
-  <div class="bg" width="100%"  style="background-color: rgb(50, 131, 236); border-top-left-radius: 70px; border-top-right-radius: 70px; height: 150px;">
-    <p style="text-align: center; color: aliceblue; padding-top: 80px;">Student Name : Tayyaba Waseem  Roll No : 179705</p>
-  </div>
-  
-
+</div>
+<div class="bg" width="100%" style="background-color: rgb(50, 131, 236); border-top-left-radius: 70px; border-top-right-radius: 70px; height: 150px;">
+    <p style="text-align: center; color: aliceblue; padding-top: 80px;">
+        Student Name: Tayyaba Waseem Roll No: 179705
+    </p>
+</div>
 
   <!-- JS Links -->
   <!-- fontAwsome Link -->
@@ -528,6 +556,27 @@
   <!-- External JS Links -->
 
   <script src="Js/script.js"></script>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC39f-N3qGIt1PVncwWwFOwqFmzs-W1t4M",
+      authDomain: "mini-project-a144d.firebaseapp.com",
+      databaseURL: "https://mini-project-a144d-default-rtdb.firebaseio.com",
+      projectId: "mini-project-a144d",
+      storageBucket: "mini-project-a144d.firebasestorage.app",
+      messagingSenderId: "1003849524118",
+      appId: "1:1003849524118:web:ee4b4d94131ddaf34df3b7"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+  </script>
+
   <script type="module" src="Js/app.js" >
 
 
